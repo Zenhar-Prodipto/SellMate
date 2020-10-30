@@ -6,10 +6,12 @@ const User = require('../models/users');
 const {errorHandler} = require('../helpers/dbErrorHandlers');
 const users = require("../models/users");
 
-exports.signup= (req,res)=>{
-    console.log("req bdy",req.body);
-    const user =  new User(req.body)
 
+exports.signup= (req,res)=>{
+    console.log("req body",req.body);
+    const user =  new User(req.body) //model variable
+
+    //When a new user sign ups, save it ans let errorhandler handle errors. Then send the data back on json
     user.save((err,user)=>{
         if(err){
             return res.status(400).json({
@@ -72,3 +74,26 @@ exports.requireSignin= expressJwt({
     algorithms: ["HS256"], 
     userProperty: "auth"
 });
+
+
+exports.isAuth = (req,res,next)=>{
+    //if authorized and user id and required id matches then proceed else access denied
+    let user = req.profile && req.auth  && req.profile._id ==req.auth._id;
+
+    if(!user){
+        return res.status(403).json({
+                error:"Access denied"
+        });
+    }
+    next()
+}
+
+exports.isAdmin= (req,res,next)=>{
+    //if the role is 0, which means user, then deny. Need this to protect admin resources
+    if (req.profile.role ===0){
+        return res.status(403).json({
+            error: "Admin resource! Access Denied!"
+        });
+    };
+    next()
+}
