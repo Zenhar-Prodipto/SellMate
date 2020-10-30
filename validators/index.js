@@ -2,7 +2,7 @@ exports.userSignUpVaidator=(req,res,next)=>{
 
     req.check("name","name is required").notEmpty()
 
-    req.check("Email","must be within 3 to 40 characters")
+    req.check("email","must be within 3 to 40 characters")
     .notEmpty()
     // .matches(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)
     .matches(/.+\@.+\..+/)

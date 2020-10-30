@@ -11,7 +11,7 @@ const expressValidator = require("express-validator")
 
 
 //imports
-const userRoutes = require("./routes/users");
+const authRoutes = require("./routes/auth");
 
 //app
 const app = express()
@@ -34,7 +34,7 @@ app.use(expressValidator())
 
 //Routes
 
-app.use('/api',userRoutes);
+app.use('/api',authRoutes);
 
 
 //Port
