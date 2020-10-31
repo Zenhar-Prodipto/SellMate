@@ -5,20 +5,21 @@ const morgan = require('morgan');
 const bodyParser = require ("body-parser");
 const cookieParser = require ("cookie-parser");
 const expressValidator = require("express-validator")
-// var uuid = require('uuid');
-// const uuidv1 = require('uuid/v1');
 
 
 
-//imports
+
+//Route imports
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
+const categoryRoutes = require("./routes/category");
+const productRoutes = require("./routes/product");
+
 
 //app
 const app = express()
 
 //Database
-// mongodb+srv://Admin-Zenhar:<password>@cluster0.eam0a.mongodb.net/<dbname>?retryWrites=true&w=majority
 mongoose.connect( process.env.DATABASE,{
   useNewUrlParser: true,
   useCreateIndex: true
@@ -36,7 +37,10 @@ app.use(expressValidator())
 //Routes
 
 app.use('/api',authRoutes);
-app.use('/api',userRoutes)
+app.use('/api',userRoutes);
+app.use('/api',categoryRoutes);
+app.use('/api',productRoutes);
+
 
 
 //Port
