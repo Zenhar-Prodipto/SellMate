@@ -1,7 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-//Controllers
+const { requireSignin, isAuth, isAdmin } = require("../controllers/auth");
+const { userById } = require("../controllers/user");
+
+//This.COntroller
 const {
   create,
   productById,
@@ -9,20 +12,21 @@ const {
   remove,
   update,
 } = require("../controllers/product");
-const { requireSignin, isAdmin, isAuth } = require("../controllers/auth");
-const { userById } = require("../controllers/user");
-const category = require("../models/category");
-const { errorHandler } = require("../helpers/dbErrorHandlers");
-const product = require("../models/product");
 
-//Routes
-// router.post("/product/create/:userId", requireSignin, create);
-router.post("/product/create/:userId", requireSignin, create);
-router.param("userId", userById);
-
+router.post("/product/create/:userId", requireSignin, isAdmin, create);
 router.get("/product/:productId", read);
+router.post("/product/create/:userId", requireSignin, isAuth, isAdmin, create);
+router.delete("/product/:productId/:userId", requireSignin, isAdmin, remove);
+router.put("/product/:productId/:userId", requireSignin, isAdmin, update);
+
+// router.get("/products", list);
+// router.get("/products/search", listSearch);
+// router.get("/products/related/:productId", listRelated);
+// router.get("/products/categories", listCategories);
+// router.post("/products/by/search", listBySearch);
+// router.get("/product/photo/:productId", photo);
+
+router.param("userId", userById);
 router.param("productId", productById);
 
-router.delete("/product/:productId/:userId", remove);
-router.put("/product/:productId/:userId", update);
 module.exports = router;

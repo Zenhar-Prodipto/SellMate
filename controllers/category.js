@@ -1,5 +1,6 @@
 const Category = require("../models/category"); //We need the model
 const { errorHandler } = require("../helpers/dbErrorHandlers");
+const { remove } = require("lodash");
 
 exports.categoryById = (req, res, next, id) => {
   //grab the id from the model
@@ -32,5 +33,52 @@ exports.read = (req, res) => {
 
   return res.json({
     category,
+  });
+};
+
+exports.update = (req, res) => {
+  let category = req.category;
+  category.name = req.body.name;
+
+  category.save((err, data) => {
+    if (err) {
+      return res.status(400).json({
+        error: "failed to save category",
+      });
+    }
+
+    res.json({
+      data,
+      massage: "Successful",
+    });
+  });
+};
+
+exports.remove = (req, res) => {
+  let category = req.category;
+  category.remove((err, data) => {
+    if (err) {
+      return res.status(400).json({
+        error: "failed to delete category",
+      });
+    }
+
+    res.json({
+      data,
+      massage: "Successful",
+    });
+  });
+};
+
+exports.list = (req, res) => {
+  Category.find().exec((err, list) => {
+    if (err) {
+      return res.status(200).json({
+        error: "error finding the list",
+      });
+    }
+    res.json({
+      list,
+    });
   });
 };
