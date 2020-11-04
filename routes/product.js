@@ -11,6 +11,11 @@ const {
   read,
   remove,
   update,
+  list,
+  relatedProducts,
+  categoryList,
+  listBySearch,
+  productPhoto,
 } = require("../controllers/product");
 
 router.post("/product/create/:userId", requireSignin, isAdmin, create);
@@ -19,12 +24,11 @@ router.post("/product/create/:userId", requireSignin, isAuth, isAdmin, create);
 router.delete("/product/:productId/:userId", requireSignin, isAdmin, remove);
 router.put("/product/:productId/:userId", requireSignin, isAdmin, update);
 
-// router.get("/products", list);
-// router.get("/products/search", listSearch);
-// router.get("/products/related/:productId", listRelated);
-// router.get("/products/categories", listCategories);
-// router.post("/products/by/search", listBySearch);
-// router.get("/product/photo/:productId", photo);
+router.get("/products", list);
+router.get("/products/relatedproducts/:productId", relatedProducts);
+router.get("/products/catogories", categoryList);
+router.post("/products/by/search", listBySearch);
+router.get("/product/photo/:productId", productPhoto);
 
 router.param("userId", userById);
 router.param("productId", productById);
