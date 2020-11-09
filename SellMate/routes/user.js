@@ -15,7 +15,7 @@ router.get("/secret/:userId", requireSignin, isAdmin, isAuth, (req, res) => {
 });
 
 router.get("/user/:userId", read);
-router.post("/user/:userId", requireSignin, update);
+router.put("/user/:userId", requireSignin, update);
 
 router.param("userId", userById);
 

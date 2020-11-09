@@ -73,7 +73,7 @@ exports.remove = (req, res) => {
 exports.list = (req, res) => {
   Category.find().exec((err, list) => {
     if (err) {
-      return res.status(200).json({
+      return res.status(400).json({
         error: "error finding the list",
       });
     }

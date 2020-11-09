@@ -25,7 +25,7 @@ exports.read = (req, res) => {
 
 exports.update = (req, res) => {
   User.findByIdAndUpdate(
-    { _id: req.profile.id }, //check for id
+    { _id: req.profile._id }, //check for id
     { $set: req.body }, //will take any field in the body to update
     { new: true }, // updated = true
     (err, user) => {
