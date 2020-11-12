@@ -18,6 +18,15 @@ const Navbar = ({ history }) => (
           Home
         </Link>
       </li>
+      <li className="nav-items">
+        <Link
+          className="nav-link"
+          style={isActive(history, "/shop")}
+          to="/shop"
+        >
+          Shop
+        </Link>
+      </li>
       {isAuthenticated() && isAuthenticated().user.role === 0 && (
         <li className="nav-items">
           <Link

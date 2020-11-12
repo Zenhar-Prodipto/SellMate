@@ -21,10 +21,11 @@ const Home = () => {
 
   const loadProductsByArrival = () => {
     getProducts("createdAt").then((data) => {
+      console.log(data);
       if (data.error) {
         setError(data.error);
       } else {
-        setProductsBySell(data);
+        setProductsByArrival(data);
       }
     });
   };
@@ -33,24 +34,29 @@ const Home = () => {
     loadProductsByArrival();
     loadProductsBySell();
   }, []);
+
   return (
     <Layout
       title="Sellmate"
       description="An e-commerce site for pets (may be)"
       className="container-fluid"
     >
-      <h2 className="mb-4">Best Sellers</h2>
-      <div className="row">
-        {productsBySell.map((product, index) => {
-          <Card key={index} product={product} />;
-        })}
-      </div>
-
       <h2 className="mb-4">New Arrivals</h2>
       <div className="row">
-        {productsByArrival.map((product, index) => {
-          <Card key={index} product={product} />;
-        })}
+        {productsByArrival.map((product, index) => (
+          <div key={index} className="col-4 mb-3">
+            <Card product={product} />
+          </div>
+        ))}
+      </div>
+
+      <h2 className="mb-4">Best Sellers</h2>
+      <div className="row">
+        {productsBySell.map((product, index) => (
+          <div key={index} className="col-4 mb-3">
+            <Card product={product} />
+          </div>
+        ))}
       </div>
     </Layout>
   );
