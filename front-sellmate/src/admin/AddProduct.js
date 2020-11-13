@@ -45,13 +45,14 @@ const AddProduct = () => {
   //Load categories from getCategory()
 
   const loadCategories = () => {
-    getCategories().then((data) => {
+    getCategories(token).then((data) => {
+      console.log(data);
       if (data.error) {
         setValues({ ...values, error: data.error });
       } else {
         setValues({
           ...values,
-          categories: data,
+          categories: data.list,
           formData: new FormData(),
         });
       }
@@ -185,7 +186,7 @@ const AddProduct = () => {
           {categories &&
             categories.map((category, index) => (
               <option key={index} value={category._id}>
-                category.name
+                {category.name}
               </option>
             ))}
         </select>
@@ -227,7 +228,7 @@ const AddProduct = () => {
       className="alert alert-info"
       style={{ display: createProduct ? "" : "none" }}
     >
-      <h2>{`${createProduct} created successuflly`}</h2>
+      <h2>{`created successuflly`}</h2>
     </div>
   );
 

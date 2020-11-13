@@ -20,10 +20,11 @@ const Shop = () => {
 
   const [filteredResults, setFilteredResults] = useState(0);
 
-  //load those data we gor from backend and useEffect
+  //load those data we got from backend and useEffect
 
   const loadCategories = () => {
     getCategories().then((data) => {
+      console.log(data);
       if (data.error) {
         setError(data.error);
       } else {

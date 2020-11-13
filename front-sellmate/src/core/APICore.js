@@ -1,6 +1,16 @@
 import { API } from "../config";
 import queryString from "query-string";
 
+// export const getProducts = (sortBy) => {
+//   return fetch(`${API}/products?sortBy=${sortBy}&order=desc&limit=6`, {
+//     method: "GET",
+//   })
+//     .then((response) => {
+//       return response.json();
+//     })
+//     .catch((err) => console.log(err));
+// };
+
 export const getProducts = (sortBy) => {
   return fetch(`${API}/products?sortBy=${sortBy}&order=desc&limit=6`, {
     method: "GET",
@@ -10,14 +20,17 @@ export const getProducts = (sortBy) => {
     })
     .catch((err) => console.log(err));
 };
-
-export const getCategories = () => {
+export const getCategories = (token) => {
   return fetch(`${API}/categories`, {
     method: "GET",
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
   })
     .then((response) => {
-      console.log(response);
-      return console.log(response.json());
+      console.log(response.data);
+      return response.json();
     })
     .catch((err) => console.log(err));
 };

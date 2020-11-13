@@ -35,13 +35,17 @@ export const createProduct = (userId, token, product) => {
     });
 };
 
-export const getCategories = () => {
+export const getCategories = (token) => {
   return fetch(`${API}/categories`, {
     method: "GET",
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
   })
     .then((response) => {
-      console.log(response);
-      return console.log(response.json());
+      console.log(response.data);
+      return response.json();
     })
     .catch((err) => console.log(err));
 };

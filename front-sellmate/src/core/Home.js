@@ -25,6 +25,7 @@ const Home = () => {
       if (data.error) {
         setError(data.error);
       } else {
+        // console.log(data.list);
         setProductsByArrival(data);
       }
     });
