@@ -150,9 +150,7 @@ exports.list = (req, res) => {
           error: "Product not found!",
         });
       }
-      res.json({
-        list,
-      });
+      res.json(list);
     });
 };
 
@@ -170,9 +168,7 @@ exports.relatedProducts = (req, res) => {
           error: "No related product. It failed",
         });
       }
-      res.json({
-        relatedProducts,
-      });
+      res.json(relatedProducts);
     });
 };
 
@@ -219,9 +215,7 @@ exports.listBySearch = (req, res) => {
           error: "Failed to list the categories",
         });
       }
-      res.json({
-        list,
-      });
+      res.json(list);
     });
 };
 
