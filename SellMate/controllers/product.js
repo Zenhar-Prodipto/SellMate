@@ -4,6 +4,7 @@ const fs = require("fs");
 const Product = require("../models/product");
 const { errorHandler } = require("../helpers/dbErrorHandlers");
 const { orderBy } = require("lodash");
+const { runInNewContext } = require("vm");
 
 exports.productById = (req, res, next, id) => {
   Product.findById(id)
@@ -230,4 +231,28 @@ exports.productPhoto = (req, res, next) => {
     return res.send(req.product.photo.data);
   }
   next();
+};
+
+exports.listSearch = (req, res) => {
+  //Create query Object to hold search value and category value
+  const query = {};
+  //Assign Search Value To query.name
+  if (req.query.search) {
+    query.name = { $regex: req.query.search, $options: "i" };
+  }
+  //Assign Category to query.category
+  if (runInNewContext.query.category && req.query.category != "All") {
+    query.category = req.query.category;
+  }
+  //Find Product based on query objects with 2 properties
+
+  // search and categories
+  Product.find(query, (err, products) => {
+    if (err) {
+      return res.status(400).json({
+        error: errorHandler(err),
+      });
+    }
+    res.json(products);
+  }).select(-photo);
 };
