@@ -106,34 +106,6 @@ const AddProduct = () => {
     });
   };
 
-  // const handleChange = (name) => (event) => {
-  //   const value = name === "photo" ? event.target.files[0] : event.target.value;
-  //   formData.set(name, value);
-  //   setValues({ ...values, [name]: value });
-  // };
-
-  // const clickSubmit = (event) => {
-  //   event.preventDefault();
-  //   setValues({ ...values, error: "", loading: true });
-
-  //   createProduct(user._id, token, formData).then((data) => {
-  //     if (data.error) {
-  //       setValues({ ...values, error: data.error });
-  //     } else {
-  //       setValues({
-  //         ...values,
-  //         name: "",
-  //         description: "",
-  //         photo: "",
-  //         price: "",
-  //         quantity: "",
-  //         loading: false,
-  //         createdProduct: data.name,
-  //       });
-  //     }
-  //   });
-  // };
-
   //Product Form
   const newProductForm = () => (
     <form className="mb-3" onSubmit={clickSubmit}>
@@ -226,7 +198,7 @@ const AddProduct = () => {
   const showSuccess = () => (
     <div
       className="alert alert-info"
-      style={{ display: createProduct ? "" : "none" }}
+      style={{ display: createdProduct ? "" : "none" }}
     >
       <h2>{`created successuflly`}</h2>
     </div>

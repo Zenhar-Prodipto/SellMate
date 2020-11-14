@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Layout from "./Layout";
 import { API } from "../config";
-import { getProducts, getCategories, list } from "./APICore";
+import { getProducts, list, getCategories } from "./APICore";
+// import { getCategories } from "../admin/APIAdmin";
+
 import Card from "./Card";
 
 // STATES
@@ -21,6 +23,7 @@ const Search = () => {
 
   const loadCategories = () => {
     getCategories().then((data) => {
+      console.log(data);
       if (data.error) {
         console.log(data.error);
       } else {
@@ -33,12 +36,23 @@ const Search = () => {
     loadCategories();
   }, []);
 
-  const searchProducts = (results = []) => {
+  const searchedMessage = (searched, results) => {
+    if (searched && results.length > 0) {
+      return `${results.length} products found`;
+    }
+    if (searched && results.length < 1) {
+      return `No Products Found`;
+    }
+  };
+  const searchedProducts = (results = []) => {
     return (
-      <div className="row">
-        {results.map((product, index) => (
-          <Card key={index} product={product} />
-        ))}
+      <div>
+        <h2 className="mt-4 mb-4">{searchedMessage(searched, results)}</h2>
+        <div className="row">
+          {results.map((product, index) => (
+            <Card key={index} product={product} />
+          ))}
+        </div>
       </div>
     );
   };
@@ -63,9 +77,9 @@ const Search = () => {
     searchData();
   };
 
-  const handleChange = (name = (event) => {
+  const handleChange = (name) => (event) => {
     setData({ ...data, [name]: event.target.value, searched: false });
-  });
+  };
 
   //SEARCH FORM
   const searchForm = () => (
@@ -99,8 +113,10 @@ const Search = () => {
   return (
     <div className="row">
       <div className="container">{searchForm()}</div>
-      <div className="container-fluid">{searchProducts(results)}</div>
+      <div className="container-fluid">{searchedProducts(results)}</div>
     </div>
   );
 };
 export default Search;
+
+// ============================================

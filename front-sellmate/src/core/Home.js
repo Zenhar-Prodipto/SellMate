@@ -3,6 +3,7 @@ import Layout from "./Layout";
 import { API } from "../config";
 import { getProducts } from "./APICore";
 import Card from "./Card";
+import Search from "./Search";
 
 const Home = () => {
   const [productsBySell, setProductsBySell] = useState([]);

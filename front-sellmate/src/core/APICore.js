@@ -20,13 +20,14 @@ export const getProducts = (sortBy) => {
     })
     .catch((err) => console.log(err));
 };
-export const getCategories = (token) => {
+export const getCategories = () => {
   return fetch(`${API}/categories`, {
     method: "GET",
-    headers: {
-      Accept: "application/json",
-      Authorization: `Bearer ${token}`,
-    },
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     Accept: "application/json",
+    //     Authorization: `Bearer ${token}`,
+    //   },
   })
     .then((response) => {
       console.log(response.data);
@@ -63,6 +64,17 @@ export const list = (params) => {
     method: "GET",
   })
     .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+export const read = (productId) => {
+  return fetch(`${API}/product/${productId}`, {
+    method: "GET",
+  })
+    .then((response) => {
+      console.log(response.data);
       return response.json();
     })
     .catch((err) => console.log(err));

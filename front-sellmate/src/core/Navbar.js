@@ -11,7 +11,7 @@ const isActive = (history, path) => {
 };
 
 const Navbar = ({ history }) => (
-  <div>
+  <div className="sticky">
     <ul className="nav nav-tabs bg-dark">
       <li className="nav-items">
         <Link className="nav-link" style={isActive(history, "/")} to="/">
