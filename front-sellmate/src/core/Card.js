@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link, withRouter, Redirect } from "react-router-dom";
+import { addItem } from "./CartHelpers";
 import ShowImage from "./ShowImage";
 import moment from "moment";
 
-const Card = ({ product, showViewProductButton = true }) => {
+const Card = ({
+  product,
+  showViewProductButton = true,
+  showAddToCartButton = true,
+}) => {
+  const [redirect, setRedirect] = useState(false);
+
   const showViewButton = (showViewProductButton) => {
     return (
       showViewProductButton && (
@@ -14,14 +21,31 @@ const Card = ({ product, showViewProductButton = true }) => {
     );
   };
 
-  const showAddToCartButton = () => {
+  const showAddToCart = (showAddToCartButton) => {
     return (
-      <Link to={`/product/${product._id}`}>
-        <button className="btn btn-outline-warning mt-2 mb-2">
-          Add to cart
-        </button>
-      </Link>
+      showAddToCartButton && (
+        <Link to={`/cart`}>
+          <button
+            onClick={addToCart}
+            className="btn btn-outline-warning mt-2 mb-2"
+          >
+            Add to cart
+          </button>
+        </Link>
+      )
     );
+  };
+
+  const addToCart = () => {
+    addItem(product, () => {
+      setRedirect(true);
+    });
+  };
+
+  const shouldRedirect = (redirect) => {
+    if (redirect) {
+      return <Redirect to="/cart" />;
+    }
   };
 
   const showStock = (quantity) => {
@@ -36,6 +60,7 @@ const Card = ({ product, showViewProductButton = true }) => {
     <div className="card">
       <div className="card-header name">{product.name}</div>
       <div className="card-body">
+        {shouldRedirect(redirect)}
         <ShowImage item={product} url="product"></ShowImage>
         <p className="lead mt-2">{product.description.substring(0, 100)}</p>
         <p className="black-10">${product.price}</p>
@@ -51,7 +76,7 @@ const Card = ({ product, showViewProductButton = true }) => {
           {showViewButton(showViewProductButton)}
         </Link>
 
-        {showAddToCartButton()}
+        {showAddToCart(showAddToCartButton)}
       </div>
     </div>
   );

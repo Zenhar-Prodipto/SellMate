@@ -8,6 +8,18 @@
 }
 /* ======================= */
 
+/* Cart  */
+
+.cart-badge,
+.cart-badge:hover {
+  border-radius: 80%;
+  padding: 6px;
+  margin-left: 2px;
+  font-size: 14px;
+  font-style: italic;
+  background-color: darkred;
+}
+
 /* Single Product Page  */
 
 .name {
@@ -15,6 +27,8 @@
   color: #fff;
   font-weight: bold;
 }
+
+/* =========================== */
 .product-image {
   min-height: 100px;
 }
