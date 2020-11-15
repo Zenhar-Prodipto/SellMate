@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, withRouter, Redirect } from "react-router-dom";
-import { addItem } from "./CartHelpers";
+import { addItem, updateItem } from "./CartHelpers";
 import ShowImage from "./ShowImage";
 import moment from "moment";
 
@@ -8,8 +8,10 @@ const Card = ({
   product,
   showViewProductButton = true,
   showAddToCartButton = true,
+  cartUpdate = false,
 }) => {
   const [redirect, setRedirect] = useState(false);
+  const [count, setCount] = useState(product.count);
 
   const showViewButton = (showViewProductButton) => {
     return (
@@ -32,6 +34,30 @@ const Card = ({
             Add to cart
           </button>
         </Link>
+      )
+    );
+  };
+
+  const handleChange = (productId) => (event) => {
+    setCount(event.target.value < 1 ? 1 : event.target.value);
+    if (event.target.value >= 1) {
+      updateItem(productId, event.target.value);
+    }
+  };
+  const showCartUpdateOptions = (cartUpdate) => {
+    return (
+      cartUpdate && (
+        <div className="input-group mb-3">
+          <div className="input-group prepend">
+            <span className="input-group text">Adjust quanity</span>
+          </div>
+          <input
+            type="number"
+            className="form-control"
+            value={count}
+            onChange={handleChange(product._id)}
+          />
+        </div>
       )
     );
   };
@@ -77,6 +103,7 @@ const Card = ({
         </Link>
 
         {showAddToCart(showAddToCartButton)}
+        {showCartUpdateOptions(cartUpdate)}
       </div>
     </div>
   );
