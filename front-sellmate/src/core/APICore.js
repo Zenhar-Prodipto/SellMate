@@ -79,3 +79,14 @@ export const read = (productId) => {
     })
     .catch((err) => console.log(err));
 };
+
+export const relatedProductList = (productId) => {
+  return fetch(`${API}/products/relatedproducts/${productId}`, {
+    method: "GET",
+  })
+    .then((response) => {
+      console.log(response.data);
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};

@@ -7,6 +7,14 @@
   z-index: 1;
 }
 /* ======================= */
+
+/* Single Product Page  */
+
+.name {
+  background-color: darkred;
+  color: #fff;
+  font-weight: bold;
+}
 .product-image {
   min-height: 100px;
 }
