@@ -1,16 +1,6 @@
 import { API } from "../config";
 import queryString from "query-string";
 
-// export const getProducts = (sortBy) => {
-//   return fetch(`${API}/products?sortBy=${sortBy}&order=desc&limit=6`, {
-//     method: "GET",
-//   })
-//     .then((response) => {
-//       return response.json();
-//     })
-//     .catch((err) => console.log(err));
-// };
-
 export const getProducts = (sortBy) => {
   return fetch(`${API}/products?sortBy=${sortBy}&order=desc&limit=6`, {
     method: "GET",
@@ -83,6 +73,22 @@ export const read = (productId) => {
 export const relatedProductList = (productId) => {
   return fetch(`${API}/products/relatedproducts/${productId}`, {
     method: "GET",
+  })
+    .then((response) => {
+      console.log(response.data);
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+export const getBraintreeClientToken = (userId, token) => {
+  return fetch(`${API}/braintree/getToken/${userId}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
   })
     .then((response) => {
       console.log(response.data);
