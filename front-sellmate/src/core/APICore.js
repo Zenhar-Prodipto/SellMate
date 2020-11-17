@@ -96,3 +96,37 @@ export const getBraintreeClientToken = (userId, token) => {
     })
     .catch((err) => console.log(err));
 };
+
+export const paymentProcess = (userId, token, paymentData) => {
+  return fetch(`${API}/braintree/payment/${userId}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: json.stringify(paymentData),
+  })
+    .then((response) => {
+      console.log(response.data);
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+export const createOrder = (userId, token, createOrderData) => {
+  return fetch(`${API}/order/create/${userId}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: json.stringify({ order: createOrderData }),
+  })
+    .then((response) => {
+      console.log(response.data);
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
