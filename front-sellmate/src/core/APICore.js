@@ -105,7 +105,7 @@ export const paymentProcess = (userId, token, paymentData) => {
       Accept: "application/json",
       Authorization: `Bearer ${token}`,
     },
-    body: json.stringify(paymentData),
+    body: JSON.stringify(paymentData),
   })
     .then((response) => {
       console.log(response.data);
@@ -122,7 +122,7 @@ export const createOrder = (userId, token, createOrderData) => {
       Accept: "application/json",
       Authorization: `Bearer ${token}`,
     },
-    body: json.stringify({ order: createOrderData }),
+    body: JSON.stringify({ order: createOrderData }),
   })
     .then((response) => {
       console.log(response.data);
