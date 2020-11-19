@@ -83,10 +83,62 @@ export const updateOrderStatus = (userId, token, status, orderId) => {
     method: "PUT",
     headers: {
       Accept: "application/json",
-      ContentType: "application/json",
+      "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({ status, orderId }),
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+//CRUD operations for manage products for admins
+
+export const getProductList = () => {
+  return fetch(`${API}/products?limit=undefined`, {
+    method: "GET",
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+export const getSingleProduct = (productId) => {
+  return fetch(`${API}/product/${productId}`, {
+    method: "GET",
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+export const updateProduct = (userId, token, productId, updatedProduct) => {
+  return fetch(`${API}/product/${productId}/${userId}`, {
+    method: "PUT",
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: updateProduct, //no json stringify because it'll be a form data cuz there's a photo in it
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+export const removeProduct = (userId, token, productId) => {
+  return fetch(`${API}/product/${productId}/${userId}`, {
+    method: "DELETE",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
   })
     .then((response) => {
       return response.json();
