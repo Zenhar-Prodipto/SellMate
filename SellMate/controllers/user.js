@@ -1,7 +1,8 @@
 // const router = require("../routes/auth");
 const router = require("../routes/user");
-
+const { errorHandler } = require("../helpers/dbErrorHandlers");
 const User = require("../models/users");
+const { Order } = require("../models/order");
 
 exports.userById = (req, res, next, id) => {
   User.findById(id).exec((err, user) => {
@@ -11,7 +12,7 @@ exports.userById = (req, res, next, id) => {
       });
     }
 
-    req.profile = user;
+    req.profile = user; //profile change kore user kora chhilo first e
     next();
   });
 };
@@ -71,4 +72,18 @@ exports.addOrderToUserHistory = (req, res, next) => {
       next();
     }
   );
+};
+
+exports.purchaseHistory = (req, res) => {
+  Order.find({ user: req.profile._id })
+    .populate("user", "_id name")
+    .sort("-created")
+    .exec((err, orders) => {
+      if (err) {
+        return res.status(400).json({
+          error: errorHandler(err),
+        });
+      }
+      res.json(orders);
+    });
 };
