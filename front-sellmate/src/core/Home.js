@@ -43,6 +43,7 @@ const Home = () => {
       description="An e-commerce site for pets (may be)"
       className="container-fluid"
     >
+      <Search />
       <h2 className="mb-4">New Arrivals</h2>
       <div className="row">
         {productsByArrival.map((product, index) => (

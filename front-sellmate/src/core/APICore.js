@@ -10,14 +10,14 @@ export const getProducts = (sortBy) => {
     })
     .catch((err) => console.log(err));
 };
-export const getCategories = () => {
+export const getCategories = (token) => {
   return fetch(`${API}/categories`, {
     method: "GET",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Accept: "application/json",
-    //     Authorization: `Bearer ${token}`,
-    //   },
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
   })
     .then((response) => {
       console.log(response.data);
@@ -49,11 +49,12 @@ export const getFilteredProducts = (skip, limit, filters = {}) => {
 
 export const list = (params) => {
   const query = queryString.stringify(params);
-
+  console.log("query", query);
   return fetch(`${API}/products/search?${query}`, {
     method: "GET",
   })
     .then((response) => {
+      console.log(` this response: ${response}`);
       return response.json();
     })
     .catch((err) => console.log(err));
