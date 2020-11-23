@@ -14,7 +14,7 @@ const AdminDashboard = () => {
         <h3 className="card-header">Info</h3>
         <ul className="list-group">
           <li className="list-group-item">
-            <Link to="/create/category">Create Category</Link>
+            <Link to={`/category/create/${_id}`}>Create Category</Link>
           </li>
           <li className="list-group-item">
             <Link to="/create/product">Create product</Link>

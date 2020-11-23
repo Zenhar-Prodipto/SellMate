@@ -52,7 +52,7 @@ const AddProduct = () => {
       } else {
         setValues({
           ...values,
-          categories: data.list,
+          categories: data,
           formData: new FormData(),
         });
       }
