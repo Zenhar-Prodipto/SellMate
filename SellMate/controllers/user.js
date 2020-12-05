@@ -24,15 +24,35 @@ exports.read = (req, res) => {
   return res.json(req.profile);
 };
 
+// exports.update = (req, res) => {
+//   User.findByIdAndUpdate(
+//     { _id: req.profile._id }, //check for id
+//     { $set: req.body }, //will take any field in the body to update
+//     { new: true }, // updated = true
+//     (err, user) => {
+//       if (err) {
+//         return res.status(400).json({
+//           error: "Error updating the profile",
+//         });
+//       }
+//       user.hashed_password = undefined;
+//       user.salt = undefined;
+//       res.json(user);
+//     }
+//   );
+// };
+
 exports.update = (req, res) => {
-  User.findByIdAndUpdate(
-    { _id: req.profile._id }, //check for id
-    { $set: req.body }, //will take any field in the body to update
-    { new: true }, // updated = true
+  console.log("user update", req.body);
+  req.body.role = 0; // role will always be 0
+  User.findOneAndUpdate(
+    { _id: req.profile._id },
+    { $set: req.body },
+    { new: true },
     (err, user) => {
       if (err) {
         return res.status(400).json({
-          error: "Error updating the profile",
+          error: "You are not authorized to perform this action",
         });
       }
       user.hashed_password = undefined;

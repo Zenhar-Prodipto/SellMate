@@ -94,7 +94,7 @@ export const updateOrderStatus = (userId, token, status, orderId) => {
     .catch((err) => console.log(err));
 };
 
-//CRUD operations for manage products for admins
+//CRUD operations for managing products for admins
 
 export const getProductList = () => {
   return fetch(`${API}/products?limit=undefined`, {

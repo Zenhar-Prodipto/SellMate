@@ -32,6 +32,7 @@ exports.read = (req, res) => {
   let category = req.category;
 
   return res.json({
+    //object akare pathaisi
     category,
   });
 };
@@ -77,8 +78,6 @@ exports.list = (req, res) => {
         error: "error finding the list",
       });
     }
-    res.json({
-      list,
-    });
+    res.json(list);
   });
 };

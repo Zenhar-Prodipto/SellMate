@@ -235,29 +235,27 @@ exports.productPhoto = (req, res, next) => {
 };
 
 exports.listSearch = (req, res) => {
-  //Create query Object to hold search value and category value
+  // create query object to hold search value and category value
   const query = {};
-  //Assign Search Value To query.name
+  // assign search value to query.name
   if (req.query.search) {
     query.name = { $regex: req.query.search, $options: "i" };
-  }
-  //Assign Category to query.category
-  if (runInNewContext.query.category && req.query.category != "All") {
-    query.category = req.query.category;
-  }
-  //Find Product based on query objects with 2 properties
-
-  // search and categories
-  Product.find(query, (err, products) => {
-    if (err) {
-      return res.status(400).json({
-        error: errorHandler(err),
-      });
+    // assigne category value to query.category
+    if (req.query.category && req.query.category != "All") {
+      query.category = req.query.category;
     }
-    res.json(products);
-  }).select(-photo);
+    // find the product based on query object with 2 properties
+    // search and category
+    Product.find(query, (err, products) => {
+      if (err) {
+        return res.status(400).json({
+          error: errorHandler(err),
+        });
+      }
+      res.json(products);
+    }).select("-photo");
+  }
 };
-
 exports.decreaseQuantity = (req, res, next) => {
   let bulkOrs = req.body.order.products.map((item) => {
     return {

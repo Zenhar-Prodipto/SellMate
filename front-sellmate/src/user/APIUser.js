@@ -5,7 +5,7 @@ export const read = (userId, token) => {
     method: "GET",
     headers: {
       Accept: "application/json",
-      //   ContentType: "application/json",
+      "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
   })
@@ -20,7 +20,7 @@ export const update = (userId, token, user) => {
     method: "PUT",
     headers: {
       Accept: "application/json",
-      ContentType: "application/json",
+      "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(user),
