@@ -123,7 +123,7 @@ export const updateProduct = (userId, token, productId, updatedProduct) => {
       Accept: "application/json",
       Authorization: `Bearer ${token}`,
     },
-    body: updateProduct, //no json stringify because it'll be a form data cuz there's a photo in it
+    body: updatedProduct, //no json stringify because it'll be a form data cuz there's a photo in it
   })
     .then((response) => {
       return response.json();

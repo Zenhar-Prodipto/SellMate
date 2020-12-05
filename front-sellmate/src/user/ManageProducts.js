@@ -52,7 +52,7 @@ const ManageProducts = () => {
               >
                 <strong>{product.name}</strong>
 
-                <Link to={`admin/product/update/${product._id}`}>
+                <Link to={`/admin/product/update/${product._id}`}>
                   <span className="badge badge-warning badge-pill">Update</span>
                 </Link>
                 <span

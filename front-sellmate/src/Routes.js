@@ -39,7 +39,7 @@ const Routes = () => {
         />
         <AdminRoute path="/create/product" exact component={AddProduct} />
         <AdminRoute
-          path="admin/product/update/:productId"
+          path="/admin/product/update/:productId"
           exact
           component={UpdateProduct}
         />

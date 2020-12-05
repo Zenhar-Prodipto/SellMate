@@ -68,14 +68,14 @@ const AddProduct = () => {
   //     });
   //   });
   // };
-
-  useEffect(() => {
+  let func = () => {
     loadCategories();
     setValues({
       ...values,
       formData: new FormData(),
     });
-  }, []);
+  };
+  useEffect(func, []);
   //handleChange function of the newProductForm
 
   const handleChange = (name) => (event) => {
