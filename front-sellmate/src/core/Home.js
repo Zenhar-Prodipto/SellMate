@@ -4,6 +4,7 @@ import { API } from "../config";
 import { getProducts } from "./APICore";
 import Card from "./Card";
 import Search from "./Search";
+import UpcomingFeatures from "./UpcomingFeatures";
 
 const Home = () => {
   const [productsBySell, setProductsBySell] = useState([]);
@@ -52,6 +53,8 @@ const Home = () => {
           </div>
         ))}
       </div>
+
+      {/* <UpcomingFeatures /> */}
 
       <h2 className="mb-4">Best Sellers</h2>
       <div className="row">
