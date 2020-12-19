@@ -1,0 +1,50 @@
+.card {
+  height: 800px;
+}
+
+.card-header {
+  text-align: center;
+  height: 5%;
+}
+
+.card-body {
+  height: 95%;
+}
+
+.card-image {
+  height: 50%;
+  border-bottom: 1px solid red;
+}
+
+.card-image > img {
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.card-description {
+  height: 20%;
+}
+
+.card-price {
+  height: 5%;
+}
+
+.card-category {
+  height: 5%;
+}
+
+.card-createdAt {
+  height: 5%;
+}
+
+.card-quantity-and-buttons {
+  height: 20%;
+}
+/* .card-quantity {
+  height: 5%;
+}
+
+.card-buttons {
+  height: 15%;
+} */

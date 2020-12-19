@@ -3,6 +3,7 @@ import { Link, withRouter, Redirect } from "react-router-dom";
 import { addItem, updateItem, removeItem } from "./CartHelpers";
 import ShowImage from "./ShowImage";
 import moment from "moment";
+import "./core.css";
 
 const Card = ({
   product,
@@ -102,23 +103,38 @@ const Card = ({
     <div className="card">
       <div className="card-header name">{product.name}</div>
       <div className="card-body">
-        {shouldRedirect(redirect)}
-        <ShowImage item={product} url="product"></ShowImage>
-        <p className="lead mt-2">{product.description.substring(0, 100)}</p>
-        <p className="black-10">${product.price}</p>
-        <p className="black-9">
-          Category: {product.category && product.category.name}
-        </p>
-        <p className="black-8">
-          Added On: {moment(product.createdAt).fromNow()}
-        </p>
-        {showStock(product.quantity)}
-        <Link to={`/product/${product._id}`}>
-          {showViewButton(showViewProductButton)}
-        </Link>
-        {showAddToCart(showAddToCartButton)}
-        {showRemoveButton(showRemoveProductButton)}
-        {showCartUpdateOptions(cartUpdate)}
+        <div className="card-image">
+          {shouldRedirect(redirect)}
+          <ShowImage item={product} url="product"></ShowImage>
+        </div>
+        <div className="card-description mb-2">
+          <p className="lead  mt-2 mb-2">
+            {product.description.substring(0, 300)}
+          </p>
+        </div>
+        <div className="card-price">
+          <p className="black-10">${product.price}</p>
+        </div>
+        <div className="card-category">
+          <p className="black-9">
+            Category: {product.category && product.category.name}
+          </p>
+        </div>
+        <div className="card-createdAt">
+          <p className="black-8">
+            Added On: {moment(product.createdAt).fromNow()}
+          </p>
+        </div>
+        <div className="card-quantity-and-buttons">
+          {showStock(product.quantity)}
+          <Link to={`/product/${product._id}`}>
+            {showViewButton(showViewProductButton)}
+          </Link>
+
+          {showAddToCart(showAddToCartButton)}
+          {showRemoveButton(showRemoveProductButton)}
+          {showCartUpdateOptions(cartUpdate)}
+        </div>
       </div>
     </div>
   );
