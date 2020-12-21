@@ -30,24 +30,42 @@
 
 /* =========================== */
 
-.jumbotron h2 {
+/* .jumbotron h2 {
   margin-top: -20px;
 }
 @media only screen and (max-width: 600px) {
   .jumbotron h2 {
     margin-top: 10px;
   }
-}
+} */
 
 .jumbotron {
-  width: 30wh;
-  height: 30vh;
+  width: 40wh;
+  height: 40vh;
   color: #fff;
   background: linear-gradient(-45deg, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #03395a, #113d58);
+  /* background: linear-gradient(rgba(20, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./images/Golden Retriever.jpg"); */
+  /* background-image: url("./images/Golden Retriever.jpg"); */
   background-size: 400% 400%;
   -webkit-animation: Gradient 15s ease infinite;
   -moz-animation: Gradient 15s ease infinite;
   animation: Gradient 15s ease infinite;
+  text-align: center;
+  position: relative;
+}
+.jumbotron-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.jumbotron-description {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @-webkit-keyframes Gradient {
@@ -85,3 +103,13 @@
     background-position: 0% 50%;
   }
 }
+
+.layout-carousel {
+  height: 100%;
+  width: 100%;
+}
+
+/* .layout-main-div {
+  height: 40vh;
+  width: 80vw;
+} */
