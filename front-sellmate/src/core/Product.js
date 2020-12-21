@@ -4,6 +4,7 @@ import { API } from "../config";
 import { read, relatedProductList } from "./APICore";
 import Card from "./Card";
 import Search from "./Search";
+import Footer from "./Footer";
 
 const Product = (props) => {
   //states
@@ -46,14 +47,18 @@ const Product = (props) => {
       className="container-fluid"
     >
       <div className="row">
-        <div className="col-8 ">
+        <div className="col-2 view-product-ad-card "></div>
+        <div className="col-6 view-product-single-product-card ">
+          <h4 style={{ textAlign: "center" }} className="mb-3">
+            Your Potential pet 😋
+          </h4>
           {product && product.description && (
             <Card product={product} showViewProductButton={false} />
           )}
         </div>
 
         <div className="col-4">
-          <h4 className="mb-2">Related Products</h4>
+          <h4 className="mb-3">Related pets</h4>
           {relatedproduct.map((prod, index) => (
             <div className="mb-3">
               <Card key={index} product={prod} />

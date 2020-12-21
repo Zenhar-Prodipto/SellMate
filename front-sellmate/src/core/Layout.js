@@ -1,8 +1,10 @@
 import React from "react";
 import Navbar from "./Navbar";
 import "../styles.css";
+import Footer from "./Footer";
 
 const Layout = ({
+  siteName = "SellMate",
   title = "Title",
   description = "Description",
   className,
@@ -11,10 +13,12 @@ const Layout = ({
   <div>
     <Navbar />
     <div className="jumbotron">
+      <h2 className="jumbotron-siteName">{siteName}</h2>
       <h2 className="jumbotron-title">{title}</h2>
       <p className="lead jumbotron-description">{description}</p>
     </div>
     <div className={className}>{children}</div>
+    <Footer />
   </div>
 );
 

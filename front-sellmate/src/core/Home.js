@@ -41,8 +41,8 @@ const Home = () => {
 
   return (
     <Layout
-      title="Sellmate"
-      description="An e-commerce site for pets (may be)"
+      title="Home"
+      description="An e-commerce site for pets"
       className="container-fluid"
     >
       <Search />
@@ -65,7 +65,7 @@ const Home = () => {
           </div>
         ))}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </Layout>
   );
 };

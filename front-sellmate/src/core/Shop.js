@@ -3,6 +3,7 @@ import Layout from "./Layout";
 import { API } from "../config";
 import { getProducts, getCategories, getFilteredProducts } from "./APICore";
 import Card from "./Card";
+import ShopCard from "./ShopCard";
 import Checkbox from "./Checkbox";
 import { prices } from "./FixedPrices";
 import RadioBox from "./RadioBox";
@@ -107,12 +108,12 @@ const Shop = () => {
 
   return (
     <Layout
-      title="Sellmate"
-      description="An e-commerce site for pets (may be)"
+      title="Shop"
+      description="Shop your next pet"
       className="container-fluid"
     >
       <div className="row">
-        <div className="col-4">
+        <div className="col-3">
           <h4>Filter by categories</h4>
           <ul>
             <Checkbox
@@ -130,12 +131,12 @@ const Shop = () => {
           </div>
         </div>
 
-        <div className="col-8">
+        <div className="col-9">
           <h2 className="mb-4">Products</h2>
           <div className="row">
             {filteredResults.map((product, i) => (
-              <div key={i} className="col-4 mb-3">
-                <Card product={product} />
+              <div key={i} className="col-6 mb-3">
+                <ShopCard product={product} />
               </div>
             ))}
           </div>
