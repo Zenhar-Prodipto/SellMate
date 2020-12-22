@@ -3,7 +3,8 @@ import { Link, withRouter, Redirect } from "react-router-dom";
 import { addItem, updateItem, removeItem } from "./CartHelpers";
 import ShowImage from "./ShowImage";
 import moment from "moment";
-import "./core.css";
+// import "./core.css";
+import "./core_css/card.css";
 
 const Card = ({
   product,
@@ -11,6 +12,7 @@ const Card = ({
   showAddToCartButton = true,
   cartUpdate = false,
   showRemoveProductButton = false,
+  className,
 }) => {
   const [redirect, setRedirect] = useState(false);
   const [count, setCount] = useState(product.count);

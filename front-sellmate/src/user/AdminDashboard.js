@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import Layout from "../core/Layout";
 import { isAuthenticated } from "../auth";
 
+//CSS
+import "./user_css/admin-dashboard.css";
+
 const AdminDashboard = () => {
   const {
     user: { _id, name, email, role },
@@ -10,7 +13,7 @@ const AdminDashboard = () => {
 
   const AdminLinks = () => {
     return (
-      <div className="card mb-5 ">
+      <div className="card admin-dashboard-card ">
         <h3 className="card-header">Info</h3>
         <ul className="list-group">
           <li className="list-group-item">
@@ -32,7 +35,7 @@ const AdminDashboard = () => {
 
   const AdminInfo = () => {
     return (
-      <div className=" card mb-5">
+      <div className=" card admin-dashboard-card">
         <h3 className="card-header">Info</h3>
         <ul className="list-group">
           <li className="list-group-item">{name}</li>

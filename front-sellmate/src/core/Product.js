@@ -6,6 +6,9 @@ import Card from "./Card";
 import Search from "./Search";
 import Footer from "./Footer";
 
+// CSS
+import "./core_css/product.css";
+
 const Product = (props) => {
   //states
   const [product, setProduct] = useState({});

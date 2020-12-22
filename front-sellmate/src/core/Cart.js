@@ -5,6 +5,8 @@ import { getCart, removeItem } from "./CartHelpers";
 import Card from "./Card";
 import Checkout from "./Checkout";
 
+// css
+import "./core_css/cart.css";
 const Cart = () => {
   const [items, setItems] = useState([]);
 
@@ -38,11 +40,11 @@ const Cart = () => {
   return (
     <Layout
       title="CART"
-      description="An e-commerce site for pets (may be)"
+      description="Check your cart out!"
       className="container-fluid"
     >
       <div className="row">
-        <div className="col-6">
+        <div className="col-6 cart-card">
           {items.length > 0 ? showItems(items) : noItemMessage()}
         </div>
 

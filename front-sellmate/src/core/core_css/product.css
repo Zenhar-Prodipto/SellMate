@@ -1,0 +1,104 @@
+@media (min-width: 992px) {
+  .view-product-ad-card {
+    margin-top: 3.3%;
+    height: 75vh;
+    background-image: url("../../images/dog-food-ad_3_224x668.jpg");
+    animation-name: view-product-ad-card-animation;
+    animation-duration: 2s;
+  }
+  @keyframes view-product-ad-card-animation {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+
+    25% {
+      opacity: 0.25;
+    }
+
+    50% {
+      opacity: 0.5;
+      transform: translateX(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+  .view-product-single-product-card {
+    /* padding-top: 2.7%; */
+  }
+}
+
+/* ====================================================== */
+/* FOR TABS  */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .view-product-ad-card {
+    margin-top: 3.3%;
+    height: 75vh;
+    background-image: url("../../images/dog-food-ad_3_224x668.jpg");
+    animation-name: view-product-ad-card-animation;
+    animation-duration: 2s;
+  }
+  @keyframes view-product-ad-card-animation {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+
+    25% {
+      opacity: 0.25;
+    }
+
+    50% {
+      opacity: 0.5;
+      transform: translateX(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+  .view-product-single-product-card {
+    /* padding-top: 2.7%; */
+  }
+}
+
+/* ================================================== */
+/* FOR MOBILE  */
+
+@media (min-width: 400px) and (max-width: 787px) {
+  .view-product-ad-card {
+    margin-top: 3.3%;
+    height: 75vh;
+    background-image: url("../../images/dog-food-ad_3_224x668.jpg");
+    animation-name: view-product-ad-card-animation;
+    animation-duration: 2s;
+  }
+  @keyframes view-product-ad-card-animation {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+
+    25% {
+      opacity: 0.25;
+    }
+
+    50% {
+      opacity: 0.5;
+      transform: translateX(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+  .view-product-single-product-card {
+    /* padding-top: 2.7%; */
+  }
+}

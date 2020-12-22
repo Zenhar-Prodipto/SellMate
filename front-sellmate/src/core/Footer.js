@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { Link, Redirect } from "react-router-dom";
 import Search from "./Search";
-import "./core.css";
+import "./core_css/footer.css";
 
 const Footer = () => {
   return (

@@ -1,0 +1,12 @@
+@media (min-width: 992px) {
+  .admin-dashboard-card {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+@media (min-width: 400px) and (max-width: 787px) {
+}

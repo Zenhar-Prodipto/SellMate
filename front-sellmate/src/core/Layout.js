@@ -1,7 +1,9 @@
 import React from "react";
 import Navbar from "./Navbar";
-import "../styles.css";
 import Footer from "./Footer";
+
+// CSS
+import "./core_css/layout.css";
 
 const Layout = ({
   siteName = "SellMate",

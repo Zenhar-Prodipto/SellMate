@@ -1,5 +1,5 @@
 import React from "react";
-import "./core.css";
+import "./core_css/upcoming-features.css";
 
 const UpcomingFeatures = ({
   title = "Check out the upcoming exciting features to be added",
