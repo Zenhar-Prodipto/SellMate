@@ -1,9 +1,9 @@
 @media (min-width: 992px) {
-  .card {
+  .home-card {
     height: 800px;
   }
 
-  .card-header {
+  .home-card-header {
     text-align: center;
     height: 5%;
     background-color: darkred;
@@ -18,55 +18,51 @@
     font-weight: bold;
   }
 
-  .card-body {
+  .home-card-body {
     height: 95%;
   }
 
-  .card-image {
+  .home-card-image {
     height: 50%;
     border-bottom: 1px solid red;
   }
 
-  .card-image > img {
+  .home-card-image > img {
     height: 100%;
     object-fit: cover;
     overflow: hidden;
   }
 
-  .card-description {
+  .home-card-description {
     height: 20%;
   }
 
-  .card-price {
+  .home-card-price {
     height: 5%;
   }
 
-  .card-category {
+  .home-card-category {
     height: 5%;
   }
 
-  .card-createdAt {
+  .home-card-createdAt {
     height: 5%;
   }
 
-  .card-quantity-and-buttons {
+  .home-card-quantity-and-buttons {
     height: 20%;
   }
-  /* .card-quantity {
-        height: 5%;
-      }
-      
-      .card-buttons {
-        height: 15%;
-      } */
 }
+
+/* ======================================================= */
+/* FOR TABS */
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .card {
+  .home-card {
     height: 800px;
   }
 
-  .card-header {
+  .home-card-header {
     text-align: center;
     height: 5%;
     background-color: darkred;
@@ -81,38 +77,38 @@
     font-weight: bold;
   }
 
-  .card-body {
+  .home-card-body {
     height: 95%;
   }
 
-  .card-image {
+  .home-card-image {
     height: 50%;
     border-bottom: 1px solid red;
   }
 
-  .card-image > img {
+  .home-card-image > img {
     height: 100%;
     object-fit: cover;
     overflow: hidden;
   }
 
-  .card-description {
-    height: 20%;
+  .home-card-description {
+    height: 25%;
   }
 
-  .card-price {
+  .home-card-price {
     height: 5%;
   }
 
-  .card-category {
+  .home-card-category {
     height: 5%;
   }
 
-  .card-createdAt {
+  .home-card-createdAt {
     height: 5%;
   }
 
-  .card-quantity-and-buttons {
+  .home-card-quantity-and-buttons {
     height: 20%;
   }
   /* .card-quantity {
@@ -124,12 +120,15 @@
       } */
 }
 
+/* =========================================================== */
+/* FOR MOBILE  */
+
 @media (min-width: 400px) and (max-width: 767px) {
-  .card {
+  .home-card {
     height: 800px;
   }
 
-  .card-header {
+  .home-card-header {
     text-align: center;
     height: 5%;
     background-color: darkred;
@@ -144,38 +143,38 @@
     font-weight: bold;
   }
 
-  .card-body {
+  .home-card-body {
     height: 95%;
   }
 
-  .card-image {
+  .home-card-image {
     height: 50%;
     border-bottom: 1px solid red;
   }
 
-  .card-image > img {
+  .home-card-image > img {
     height: 100%;
     object-fit: cover;
     overflow: hidden;
   }
 
-  .card-description {
+  .home-card-description {
     height: 20%;
   }
 
-  .card-price {
+  .home-card-price {
     height: 5%;
   }
 
-  .card-category {
+  .home-card-category {
     height: 5%;
   }
 
-  .card-createdAt {
+  .home-card-createdAt {
     height: 5%;
   }
 
-  .card-quantity-and-buttons {
+  .home-card-quantity-and-buttons {
     height: 20%;
   }
   /* .card-quantity {

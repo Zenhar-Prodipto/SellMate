@@ -1,17 +1,17 @@
 @media (min-width: 992px) {
-  .cart-card {
+  .all-cart-items {
     margin-bottom: 3%;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .cart-card {
+  .all-cart-items {
     margin-bottom: 3%;
   }
 }
 
 @media (min-width: 400px) and (max-width: 787px) {
-  .cart-card {
+  .all-cart-items {
     margin-bottom: 3%;
   }
 }

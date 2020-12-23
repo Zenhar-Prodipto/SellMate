@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Layout from "./Layout";
 import { emptyCart } from "./CartHelpers";
-import Card from "./Card";
+import HomeCard from "./HomeCard";
 import { isAuthenticated } from "../auth";
 import {
   getBraintreeClientToken,

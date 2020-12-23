@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "./Layout";
 import { API } from "../config";
 import { getProducts, getCategories, getFilteredProducts } from "./APICore";
-import Card from "./Card";
+
 import ShopCard from "./ShopCard";
 import Checkbox from "./Checkbox";
 import { prices } from "./FixedPrices";
@@ -136,7 +136,7 @@ const Shop = () => {
           <h2 className=" mb-4">Products</h2>
           <div className="row">
             {filteredResults.map((product, i) => (
-              <div key={i} className="col-lg-4 mb-3">
+              <div key={i} className="col-lg-6 mb-3">
                 <ShopCard product={product} />
               </div>
             ))}

@@ -3,9 +3,9 @@ import { Link, withRouter, Redirect } from "react-router-dom";
 import { addItem, updateItem, removeItem } from "./CartHelpers";
 import ShowImage from "./ShowImage";
 import moment from "moment";
-import "./core_css/shop-card.css";
+import "./core_css/cart-card.css";
 
-const ShopCard = ({
+const CartCard = ({
   product,
   showViewProductButton = true,
   showAddToCartButton = true,
@@ -99,38 +99,38 @@ const ShopCard = ({
     );
   };
 
-  const shopcard = () => {
+  const cartcard = () => {
     return (
-      <div className="shop-card card">
-        <div className="shop-card-header card-header">{product.name}</div>
-        <div className="shop-card-body card-body">
-          <div className="shop-card-image card-image">
+      <div className="cart-card card">
+        <div className="cart-card-header card-header">{product.name}</div>
+        <div className="cart-card-body card-body">
+          <div className="cart-card-image card-image">
             {shouldRedirect(redirect)}
             <ShowImage item={product} url="product"></ShowImage>
           </div>
-          <div className="shop-card-description mb-2">
+          <div className="cart-card-description mb-2">
             <p className="lead  mt-2 mb-2">
               {product.description.substring(0, 300)}
             </p>
           </div>
-          <div className="shop-card-price">
+          <div className="cart-card-price">
             <p className="black-10">${product.price}</p>
           </div>
-          <div className="shop-card-category">
+          <div className="cart-card-category">
             <p className="black-9">
               Category: {product.category && product.category.name}
             </p>
           </div>
-          <div className="shop-card-createdAt">
+          <div className="cart-card-createdAt">
             <p className="black-8">
               Added On: {moment(product.createdAt).fromNow()}
             </p>
           </div>
-          <div className="shop-card-quantity-stock-and-button">
-            <div className="shop-card-quantity-and-stock">
+          <div className="cart-card-quantity-stock-and-button">
+            <div className="cart-card-quantity-and-stock">
               {showStock(product.quantity)}
             </div>
-            <div className="shop-buttons">
+            <div className="cart-buttons">
               <Link to={`/product/${product._id}`}>
                 {showViewButton(showViewProductButton)}
               </Link>
@@ -145,10 +145,10 @@ const ShopCard = ({
     );
   };
 
-  return shopcard();
+  return cartcard();
 };
 
-export default ShopCard;
+export default CartCard;
 
 {
   /* <div className="card-quantity-and-buttons">

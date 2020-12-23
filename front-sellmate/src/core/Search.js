@@ -125,7 +125,7 @@
 import React, { useState, useEffect } from "react";
 import { isAuthenticated } from "../auth";
 import { getCategories, list } from "./APICore";
-import Card from "./Card";
+import HomeCard from "./HomeCard";
 
 const Search = () => {
   const [data, setData] = useState({
@@ -194,7 +194,7 @@ const Search = () => {
         <div className="row">
           {results.map((product, i) => (
             <div className="col-4 mb-3">
-              <Card key={i} product={product} />
+              <HomeCard key={i} product={product} />
             </div>
           ))}
         </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "./Layout";
 import { API } from "../config";
 import { read, relatedProductList } from "./APICore";
-import Card from "./Card";
+import HomeCard from "./HomeCard";
 import Search from "./Search";
 import Footer from "./Footer";
 
@@ -13,7 +13,7 @@ const Product = (props) => {
   //states
   const [product, setProduct] = useState({});
   const [relatedproduct, setRelatedProduct] = useState([]);
-
+  const [closeAdButton, setCloseAdButton] = useState(true);
   const [error, setError] = useState(false);
 
   //Load Functions
@@ -41,6 +41,29 @@ const Product = (props) => {
     const productId = props.match.params.productId;
     loadSingleProduct(productId);
   }, [props]);
+
+  const showAdd = () =>
+    closeAdButton && (
+      <div className="col-2 view-product-ad-card ">
+        <button
+          onClick={clickCloseAd}
+          type="button"
+          class="close"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    );
+
+  const clickCloseAd = (event) => {
+    event.preventDefault();
+    setCloseAdButton({ closeAdButton: false });
+    console.log("Click kora hoise");
+  };
+
+  const hideAdd = () => !closeAdButton && <div className="col-2 "></div>;
+
   return (
     <Layout
       title={product && product.name}
@@ -50,7 +73,9 @@ const Product = (props) => {
       className="container-fluid"
     >
       <div className="row">
-        <div className="col-2 view-product-ad-card "></div>
+        {showAdd()}
+        {hideAdd()}
+
         <div className="col-6 view-product-single-product-card ">
           <h4 style={{ textAlign: "center" }} className="mb-3">
             Your Potential pet 😋
@@ -64,7 +89,7 @@ const Product = (props) => {
           <h4 className="mb-3">Related pets</h4>
           {relatedproduct.map((prod, index) => (
             <div className="mb-3">
-              <Card key={index} product={prod} />
+              <HomeCard key={index} product={prod} />
             </div>
           ))}
         </div>

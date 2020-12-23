@@ -1,0 +1,203 @@
+@media (min-width: 992px) {
+  .shop-card {
+    height: 800px;
+  }
+
+  .shop-card-header {
+    text-align: center;
+    height: 5%;
+    background-color: darkred;
+    color: #fff;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 5px;
+  }
+  .name {
+    background-color: darkred;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .shop-card-body {
+    height: 80%;
+  }
+
+  .shop-card-image {
+    height: 50%;
+    border-bottom: 1px solid red;
+  }
+
+  .shop-card-image > img {
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .shop-card-description {
+    height: 20%;
+  }
+
+  .shop-card-price {
+    height: 5%;
+  }
+
+  .shop-card-category {
+    height: 5%;
+  }
+
+  .shop-card-createdAt {
+    height: 5%;
+  }
+
+  .shop-card-quantity-stock-and-buttons {
+    height: 15%;
+    display: inline;
+  }
+
+  .shop-card-quantity-and-stock {
+    height: 5%;
+    display: inline;
+  }
+
+  .shop-buttons {
+    height: 5%;
+    display: inline;
+    padding-bottom: 0px;
+  }
+}
+
+/* ====================================================================== */
+/* TABS  */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .shop-card {
+    height: 800px;
+  }
+
+  .shop-card-header {
+    text-align: center;
+    height: 5%;
+    background-color: darkred;
+    color: #fff;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 5px;
+  }
+  .name {
+    background-color: darkred;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .shop-card-body {
+    height: 95%;
+  }
+
+  .shop-card-image {
+    height: 50%;
+    border-bottom: 1px solid red;
+  }
+
+  .shop-card-image > img {
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .shop-card-description {
+    height: 20%;
+  }
+
+  .shop-card-price {
+    height: 5%;
+  }
+
+  .shop-card-category {
+    height: 5%;
+  }
+
+  .shop-card-createdAt {
+    height: 5%;
+  }
+
+  .shop-card-quantity-stock-and-buttons {
+    height: 15%;
+    display: inline;
+  }
+
+  .shop-card-quantity-and-stock {
+    height: 5%;
+    display: inline;
+  }
+
+  .shop-buttons {
+    height: 10%;
+    display: inline;
+    padding-left: 0px;
+  }
+}
+
+/* ============================================================== */
+
+@media (min-width: 400px) and (max-width: 767px) {
+  .shop-card {
+    height: 800px;
+  }
+
+  .shop-card-header {
+    text-align: center;
+    height: 5%;
+    background-color: darkred;
+    color: #fff;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 5px;
+  }
+  .name {
+    background-color: darkred;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .shop-card-body {
+    height: 95%;
+  }
+
+  .shop-card-image {
+    height: 50%;
+    border-bottom: 1px solid red;
+  }
+
+  .shop-card-image > img {
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .shop-card-description {
+    height: 20%;
+  }
+
+  .shop-card-price {
+    height: 5%;
+  }
+
+  .shop-card-category {
+    height: 5%;
+  }
+
+  .shop-card-createdAt {
+    height: 5%;
+  }
+
+  .shop-card-quantity-and-stock {
+    height: 20%;
+    margin-right: 0px;
+  }
+
+  .shop-buttons {
+    display: block;
+    position: relative;
+    right: 10px;
+  }
+}

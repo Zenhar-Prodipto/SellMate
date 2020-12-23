@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "./Layout";
 import { API } from "../config";
 import { getProducts } from "./APICore";
-import Card from "./Card";
+import HomeCard from "./HomeCard";
 import Search from "./Search";
 import UpcomingFeatures from "./UpcomingFeatures";
 import Footer from "./Footer";
@@ -50,7 +50,7 @@ const Home = () => {
       <div className="row">
         {productsByArrival.map((product, index) => (
           <div key={index} className="col-lg-4 col-md-6 mb-3">
-            <Card product={product} />
+            <HomeCard product={product} />
           </div>
         ))}
       </div>
@@ -61,7 +61,7 @@ const Home = () => {
       <div className="row">
         {productsBySell.map((product, index) => (
           <div key={index} className="col-lg-4 col-md-6  mb-3">
-            <Card product={product} />
+            <HomeCard product={product} />
           </div>
         ))}
       </div>

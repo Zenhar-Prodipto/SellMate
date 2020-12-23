@@ -3,10 +3,11 @@ import { Link, withRouter, Redirect } from "react-router-dom";
 import { addItem, updateItem, removeItem } from "./CartHelpers";
 import ShowImage from "./ShowImage";
 import moment from "moment";
-// import "./core.css";
-import "./core_css/card.css";
 
-const Card = ({
+// CSS
+import "./core_css/home-card.css";
+
+const HomeCard = ({
   product,
   showViewProductButton = true,
   showAddToCartButton = true,
@@ -102,32 +103,32 @@ const Card = ({
   };
 
   return (
-    <div className="card">
-      <div className="card-header">{product.name}</div>
-      <div className="card-body">
-        <div className="card-image">
+    <div className="home-card card">
+      <div className="card-header home-card-header">{product.name}</div>
+      <div className="card-body home-card-body">
+        <div className="card-image home-card-image">
           {shouldRedirect(redirect)}
           <ShowImage item={product} url="product"></ShowImage>
         </div>
-        <div className="card-description mb-2">
+        <div className="home-card-description mb-2">
           <p className="lead  mt-2 mb-2">
             {product.description.substring(0, 300)}
           </p>
         </div>
-        <div className="card-price">
+        <div className="home-card-price">
           <p className="black-10">${product.price}</p>
         </div>
-        <div className="card-category">
+        <div className="home-card-category">
           <p className="black-9">
             Category: {product.category && product.category.name}
           </p>
         </div>
-        <div className="card-createdAt">
+        <div className="home-card-createdAt">
           <p className="black-8">
             Added On: {moment(product.createdAt).fromNow()}
           </p>
         </div>
-        <div className="card-quantity-and-buttons">
+        <div className="home-card-quantity-and-buttons">
           {showStock(product.quantity)}
           <Link to={`/product/${product._id}`}>
             {showViewButton(showViewProductButton)}
@@ -142,4 +143,4 @@ const Card = ({
   );
 };
 
-export default Card;
+export default HomeCard;
