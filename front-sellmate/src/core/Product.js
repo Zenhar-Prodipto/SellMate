@@ -13,7 +13,7 @@ const Product = (props) => {
   //states
   const [product, setProduct] = useState({});
   const [relatedproduct, setRelatedProduct] = useState([]);
-  const [closeAdButton, setCloseAdButton] = useState(true);
+  const [closeAdButton, setCloseAdButton] = useState(1);
   const [error, setError] = useState(false);
 
   //Load Functions
@@ -58,11 +58,36 @@ const Product = (props) => {
 
   const clickCloseAd = (event) => {
     event.preventDefault();
-    setCloseAdButton({ closeAdButton: false });
+    setCloseAdButton({ closeAdButton: 0 });
     console.log("Click kora hoise");
   };
 
-  const hideAdd = () => !closeAdButton && <div className="col-2 "></div>;
+  // const hideAdd = () => !closeAdButton && <div className="col-2 "></div>;
+  const hideAdd = () => {
+    if (closeAdButton == 1) {
+      return (
+        <div className="col-2 view-product-ad-card ">
+          <button
+            onClick={clickCloseAd}
+            type="button"
+            class="close"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      );
+    } else {
+      return <div className="col-2 "></div>;
+    }
+  };
+  // const isLoggedIn = this.state.isLoggedIn;
+  // let button;
+  // if (isLoggedIn) {
+  //   button = <LogoutButton onClick={this.handleLogoutClick} />;
+  // } else {
+  //   button = <LoginButton onClick={this.handleLoginClick} />;
+  // }
 
   return (
     <Layout
@@ -73,15 +98,13 @@ const Product = (props) => {
       className="container-fluid"
     >
       <div className="row">
-        {showAdd()}
         {hideAdd()}
-
         <div className="col-6 view-product-single-product-card ">
           <h4 style={{ textAlign: "center" }} className="mb-3">
             Your Potential pet 😋
           </h4>
           {product && product.description && (
-            <Card product={product} showViewProductButton={false} />
+            <HomeCard product={product} showViewProductButton={false} />
           )}
         </div>
 
