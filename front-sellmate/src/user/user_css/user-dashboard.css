@@ -1,0 +1,106 @@
+@media (min-width: 992px) {
+  .user-info-card {
+    margin-bottom: 10%;
+  }
+
+  .user-info-header {
+    background-color: darkred;
+    color: white;
+  }
+
+  .user-info-list-group {
+  }
+
+  .user-links-card {
+    height: 80vh;
+    margin-bottom: 10%;
+  }
+
+  .user-links-header {
+    background-color: darkred;
+    color: white;
+  }
+
+  .purchased-history-card {
+    margin-bottom: 5%;
+    padding: 0px;
+  }
+  .purchased-history-header {
+    background: linear-gradient(-45deg, #03395a, #113d58);
+    color: white;
+  }
+}
+
+/* ===================================================================================== */
+/* TABS  */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .user-info-card {
+    margin-bottom: 10%;
+  }
+
+  .user-info-header {
+    background-color: darkred;
+    color: white;
+  }
+
+  .user-info-list-group {
+  }
+
+  .user-links-card {
+    height: 80vh;
+    margin-bottom: 10%;
+  }
+
+  .user-links-header {
+    background-color: darkred;
+    color: white;
+  }
+
+  .purchased-history-card {
+    margin-bottom: 5%;
+    padding: 0px;
+  }
+  .purchased-history-header {
+    background: linear-gradient(-45deg, #03395a, #113d58);
+    color: white;
+  }
+}
+
+/* ===================================================================================== */
+/* MOBILE  */
+
+@media (min-width: 400px) and (max-width: 787px) {
+  .user-info-card {
+    margin-bottom: 10%;
+  }
+
+  .user-info-header {
+    background-color: darkred;
+    color: white;
+  }
+
+  .user-info-list-group {
+  }
+
+  .user-links-card {
+    height: 80vh;
+    margin-bottom: 10%;
+  }
+
+  .user-links-header {
+    background-color: darkred;
+    color: white;
+    font-size: 20px;
+  }
+
+  .purchased-history-card {
+    margin-bottom: 5%;
+    padding: 0px;
+  }
+  .purchased-history-header {
+    background: linear-gradient(-45deg, #03395a, #113d58);
+    color: white;
+    font-size: 20px;
+  }
+}

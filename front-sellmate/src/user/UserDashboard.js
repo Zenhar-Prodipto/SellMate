@@ -5,6 +5,9 @@ import { isAuthenticated } from "../auth";
 import { getPurchaseHistory } from "./APIUser";
 import moment from "moment";
 
+//CSS
+import "./user_css/user-dashboard.css";
+
 const Dashboard = () => {
   const [history, setHistory] = useState([]);
 
@@ -30,13 +33,13 @@ const Dashboard = () => {
 
   const userLinks = () => {
     return (
-      <div className="card mb-5 ">
-        <h3 className="card-header">Info</h3>
-        <ul className="list-group">
-          <li className="list-group-item">
+      <div className="card mb-5 user-links-card ">
+        <h3 className="card-header user-links-header">Links</h3>
+        <ul className="list-group user-links-list-group">
+          <li className="list-group-item user-links-list-group-item ">
             <Link to="/cart">My Cart</Link>
           </li>
-          <li className="list-group-item">
+          <li className="list-group-item user-links-list-group-item ">
             <Link to={`/profile/${_id}`}>Profile</Link>
           </li>
         </ul>
@@ -46,22 +49,26 @@ const Dashboard = () => {
 
   const userInfo = () => {
     return (
-      <div className=" card mb-5">
-        <h3 className="card-header">Info</h3>
-        <ul className="list-group">
-          <li className="list-group-item">{name}</li>
-          <li className="list-group-item">{email}</li>
-          <li className="list-group-item">{role === 0 ? "User" : "Admin"}</li>
+      <div className=" card mb-5 user-info-card">
+        <h3 className="card-header user-info-header">Your Info</h3>
+        <ul className="list-group user-info-list-group">
+          <li className="list-group-item user-info-list-group-item">{name}</li>
+          <li className="list-group-item user-info-list-group-item">{email}</li>
+          <li className="list-group-item user-info-list-group-item">
+            {role === 0 ? "User" : "Admin"}
+          </li>
         </ul>
       </div>
     );
   };
   const purchaseHistory = (history) => {
     return (
-      <div className="card col-5">
-        <h3 className="card-header">Purchase History</h3>
-        <ul className="list-group">
-          <li className="list-group-item">
+      <div className="card col-5 purchased-history-card">
+        <h3 className="card-header purchased-history-header">
+          Purchase History
+        </h3>
+        <ul className="list-group purchased-history-list-group">
+          <li className="list-group-item purchased-history-list-group-item">
             <h6>Product name: </h6>
             {history.map((history, index) => {
               //first we loop through history which has all the orders

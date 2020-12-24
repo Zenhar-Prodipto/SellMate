@@ -18,9 +18,7 @@ const CartCard = ({
   const showViewButton = (showViewProductButton) => {
     return (
       showViewProductButton && (
-        <button className="btn btn-outline-primary mr-2 ml-2">
-          View Product
-        </button>
+        <button className="btn btn-outline-primary mr-2 ">View Product</button>
       )
     );
   };
@@ -110,7 +108,7 @@ const CartCard = ({
           </div>
           <div className="cart-card-description mb-2">
             <p className="lead  mt-2 mb-2">
-              {product.description.substring(0, 300)}
+              {product.description.substring(0, 100)}
             </p>
           </div>
           <div className="cart-card-price">
@@ -126,7 +124,10 @@ const CartCard = ({
               Added On: {moment(product.createdAt).fromNow()}
             </p>
           </div>
-          <div className="cart-card-quantity-stock-and-button">
+          <div
+            className="cart-card-quantity-stock-and-button"
+            style={{ paddingTop: "10px" }}
+          >
             <div className="cart-card-quantity-and-stock">
               {showStock(product.quantity)}
             </div>

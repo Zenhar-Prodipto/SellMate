@@ -13,19 +13,19 @@ const AdminDashboard = () => {
 
   const AdminLinks = () => {
     return (
-      <div className="card admin-dashboard-card ">
-        <h3 className="card-header">Info</h3>
-        <ul className="list-group">
-          <li className="list-group-item">
+      <div className="card admin-links-card ">
+        <h3 className="card-header admin-links-header">Info</h3>
+        <ul className="list-group admin-links-list-group">
+          <li className="list-group-item admin-links-list-group-item">
             <Link to={`/category/create/${_id}`}>Create Category</Link>
           </li>
-          <li className="list-group-item">
+          <li className="list-group-item admin-links-list-group-item">
             <Link to="/create/product">Create product</Link>
           </li>
-          <li className="list-group-item">
+          <li className="list-group-item admin-links-list-group-item">
             <Link to="/admin/orders">Order List</Link>
           </li>
-          <li className="list-group-item">
+          <li className="list-group-item admin-links-list-group-item">
             <Link to="/admin/products">Manage products</Link>
           </li>
         </ul>
@@ -35,12 +35,16 @@ const AdminDashboard = () => {
 
   const AdminInfo = () => {
     return (
-      <div className=" card admin-dashboard-card">
-        <h3 className="card-header">Info</h3>
-        <ul className="list-group">
-          <li className="list-group-item">{name}</li>
-          <li className="list-group-item">{email}</li>
-          <li className="list-group-item">{role === 0 ? "User" : "Admin"}</li>
+      <div className=" card admin-info-card">
+        <h3 className="card-header admin-info-header ">Admin Info</h3>
+        <ul className="list-group admin-info-list-group">
+          <li className="list-group-item admin-info-list-group-item">{name}</li>
+          <li className="list-group-item admin-info-list-group-item">
+            {email}
+          </li>
+          <li className="list-group-item admin-info-list-group-item">
+            {role === 0 ? "User" : "Admin"}
+          </li>
         </ul>
       </div>
     );

@@ -42,28 +42,12 @@ const Product = (props) => {
     loadSingleProduct(productId);
   }, [props]);
 
-  const showAdd = () =>
-    closeAdButton && (
-      <div className="col-2 view-product-ad-card ">
-        <button
-          onClick={clickCloseAd}
-          type="button"
-          class="close"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    );
-
   const clickCloseAd = (event) => {
     event.preventDefault();
     setCloseAdButton({ closeAdButton: 0 });
-    console.log("Click kora hoise");
   };
 
-  // const hideAdd = () => !closeAdButton && <div className="col-2 "></div>;
-  const hideAdd = () => {
+  const showOrHideAd = () => {
     if (closeAdButton == 1) {
       return (
         <div className="col-2 view-product-ad-card ">
@@ -81,13 +65,6 @@ const Product = (props) => {
       return <div className="col-2 "></div>;
     }
   };
-  // const isLoggedIn = this.state.isLoggedIn;
-  // let button;
-  // if (isLoggedIn) {
-  //   button = <LogoutButton onClick={this.handleLogoutClick} />;
-  // } else {
-  //   button = <LoginButton onClick={this.handleLoginClick} />;
-  // }
 
   return (
     <Layout
@@ -98,7 +75,7 @@ const Product = (props) => {
       className="container-fluid"
     >
       <div className="row">
-        {hideAdd()}
+        {showOrHideAd()}
         <div className="col-6 view-product-single-product-card ">
           <h4 style={{ textAlign: "center" }} className="mb-3">
             Your Potential pet 😋

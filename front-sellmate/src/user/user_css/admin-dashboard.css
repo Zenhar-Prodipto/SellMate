@@ -1,12 +1,85 @@
 @media (min-width: 992px) {
-  .admin-dashboard-card {
-    margin-bottom: 0px;
-    padding-bottom: 0px;
+  .admin-info-card {
+    height: 80vh;
+    margin-bottom: 10%;
+  }
+
+  .admin-info-header {
+    background-color: darkred;
+    color: white;
+  }
+
+  .admin-info-list-group {
+  }
+
+  .admin-links-card {
+    height: 80vh;
+    margin-bottom: 10%;
+  }
+
+  .admin-links-header {
+    background-color: darkred;
+    color: white;
   }
 }
 
+/* ========================================================= */
+/* Tabs */
+
 @media (min-width: 768px) and (max-width: 991px) {
+  .admin-info-card {
+    height: 80vh;
+    margin-bottom: 10%;
+  }
+
+  .admin-info-header {
+    background-color: darkred;
+    color: white;
+  }
+
+  .admin-info-list-group {
+  }
+
+  .admin-links-card {
+    height: 80vh;
+    margin-bottom: 10%;
+  }
+
+  .admin-links-header {
+    background-color: darkred;
+    color: white;
+  }
 }
 
+/* ========================================================= */
+/* MOBILE  */
+
 @media (min-width: 400px) and (max-width: 787px) {
+  .admin-info-card {
+    height: 80vh;
+    margin-bottom: 10%;
+  }
+
+  .admin-info-header {
+    background-color: darkred;
+    color: white;
+  }
+
+  .admin-info-list-group {
+  }
+
+  .admin-links-card {
+    height: 80vh;
+    margin-bottom: 10%;
+  }
+
+  .admin-links-header {
+    background-color: darkred;
+    color: white;
+    font-size: 20px;
+  }
+
+  .admin-links-list-group-item {
+    font-size: 13px;
+  }
 }
