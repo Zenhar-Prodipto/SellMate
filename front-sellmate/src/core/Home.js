@@ -25,10 +25,12 @@ const Home = () => {
   const loadProductsByArrival = () => {
     getProducts("createdAt").then((data) => {
       console.log(data);
-      if (data.error) {
-        setError(data.error);
+      if (error) {
+        console.log(error);
+        setError(error);
       } else {
         // console.log(data.list);
+        console.log(data);
         setProductsByArrival(data);
       }
     });

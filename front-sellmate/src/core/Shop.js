@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "./Layout";
 import { API } from "../config";
 import { getProducts, getCategories, getFilteredProducts } from "./APICore";
-
+import { Link, Links, Redirect } from "react-router-dom";
 import ShopCard from "./ShopCard";
 import Checkbox from "./Checkbox";
 import { prices } from "./FixedPrices";
@@ -29,8 +29,8 @@ const Shop = () => {
     getCategories(token).then((data) => {
       console.log(`getCategories: ${data}`);
       console.log(data);
-      if (data.error) {
-        setError(data.error);
+      if (error) {
+        setError(error);
       } else {
         setCategories(data);
       }
@@ -133,7 +133,10 @@ const Shop = () => {
         </div>
 
         <div className="col-9">
-          <h2 className=" mb-4">Products</h2>
+          <h2 className=" ">Pets</h2>
+          <Link className="mb-5" to="/all-categories">
+            Check out All categories
+          </Link>
           <div className="row">
             {filteredResults.map((product, i) => (
               <div key={i} className="col-lg-6 mb-3">

@@ -10,6 +10,33 @@ export const getProducts = (sortBy) => {
     })
     .catch((err) => console.log(err));
 };
+
+export const getAllProducts = () => {
+  return fetch(`${API}/products`, {
+    method: "GET",
+  })
+    .then((response) => {
+      console.log(response);
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+export const getCategorySpecificProducts = () => {
+  return fetch(`${API}/products/categories`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  })
+    .then((response) => {
+      console.log(response);
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
 export const getCategories = (token) => {
   return fetch(`${API}/categories`, {
     method: "GET",
@@ -18,12 +45,10 @@ export const getCategories = (token) => {
       Accept: "application/json",
       Authorization: `Bearer ${token}`,
     },
-  })
-    .then((response) => {
-      console.log(response.data);
-      return response.json();
-    })
-    .catch((err) => console.log(err));
+  }).then((response) => {
+    return response.json();
+  });
+  // .catch((err) => console.log(err));
 };
 
 export const getFilteredProducts = (skip, limit, filters = {}) => {
