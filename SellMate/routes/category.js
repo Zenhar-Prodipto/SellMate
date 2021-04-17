@@ -27,6 +27,7 @@ router.get("/category/:categoryId", requireSignin, read);
 router.put("/category/:categoryId/:userId", requireSignin, isAdmin, update);
 router.delete("/category/:categoryId/:userId", requireSignin, isAdmin, remove);
 router.get("/categories", requireSignin, list);
+router.get("/allcategories", requireSignin, list);
 
 router.param("userId", userById);
 router.param("categoryId", categoryById);

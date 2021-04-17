@@ -137,7 +137,9 @@ exports.list = (req, res) => {
 
   let order = req.query.order ? req.query.order : "asc"; //if query is order, then grab that order. else do ascending
   let sortBy = req.query.sortBy ? req.query.sortBy : "_id";
-  let limit = req.query.limit ? parseInt(req.query.limit) : 6;
+  let limit = req.query.limit
+    ? parseInt(req.query.limit)
+    : parseInt(req.query.length);
 
   Product.find()
     .select("-photo")
@@ -181,6 +183,21 @@ exports.categoryList = (req, res) => {
     }
     res.json(categories);
   });
+};
+
+exports.categoryList2 = (req, res) => {
+  Product.find()
+    .select("-photo")
+    .populate("category")
+    .distinct("category")
+    .exec((err, list) => {
+      if (err) {
+        return res.status[400].json({
+          error: "Failed to list the categories",
+        });
+      }
+      res.json(list);
+    });
 };
 
 exports.listBySearch = (req, res) => {

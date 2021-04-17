@@ -14,6 +14,7 @@ const {
   list,
   relatedProducts,
   categoryList,
+  categoryList2,
   listBySearch,
   productPhoto,
   listSearch,
@@ -27,6 +28,8 @@ router.put("/product/:productId/:userId", requireSignin, isAdmin, update);
 
 router.get("/products", list);
 router.get("/products/search", listSearch);
+router.get("/products/categories", categoryList);
+// router.get("/products/categories", categoryList2);
 
 router.get("/products/relatedproducts/:productId", relatedProducts);
 router.get("/products/catogories", categoryList);

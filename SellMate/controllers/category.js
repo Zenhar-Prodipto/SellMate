@@ -10,7 +10,6 @@ exports.categoryById = (req, res, next, id) => {
         error: "Couldn't find the category",
       });
     }
-
     req.category = category;
     next();
   });
