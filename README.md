@@ -4,7 +4,7 @@ An E-commerce site designed for pet buy-sell and maintenance.
 
 # Screenshot
 
-<img src="..SellMate/images/Shop.PNG">
+<img src="SellMate/images/Shop.png">
 
 # Features
 
