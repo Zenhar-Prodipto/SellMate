@@ -47,8 +47,9 @@ app.use("/api", braintreeRoutes);
 app.use("/api", orderRoutes);
 //Port
 
-const port = process.env.PORT | 8000;
+const port = process.env.PORT || 8000;
 
 app.listen(port, function () {
+  console.log(process.env.DATABASE)
   console.log(`The app is running at port ${port}`);
 });
