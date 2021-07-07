@@ -2,7 +2,6 @@
 
 #My_gitignores
 .env
-config.js
 problems.txt
 
 
