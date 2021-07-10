@@ -2,7 +2,17 @@
 
 An E-commerce site designed for pet buy-sell and maintenance.
 
+# Demo
+
+[Sellmate](http://front-sellmate.herokuapp.com/)
+
 # Screenshot
+
+- Home Page
+
+  <img src="SellMate/images/Shop.png">
+
+- Filtered Shopping
 
 <img src="SellMate/images/Shop.png">
 
@@ -41,15 +51,15 @@ npm run start
 Frontend
 
 ```
-heroku git:remote -a $FRONTEND_APP_NAME -r heroku-frontend
-heroku config:set -a $FRONTEND_APP_NAME $(cat $FRONTEND_ENV_FILE)
+heroku git:remote -a front-sellmate -r heroku-frontend
+heroku config:set -a front-sellmate $(cat ./.env)
 git subtree push --prefix front-sellmate/ heroku-frontend main
 ```
 
 Backend
 
 ```
-heroku git:remote -a $BACKEND_APP_NAME -r heroku-backend
-heroku config:set -a $BACKEND_APP_NAME $(cat $BACKEND_ENV_FILE)
+heroku git:remote -a sellmate-backend -r heroku-backend
+heroku config:set -a sellmate-backend $(cat ./.env)
 git subtree push --prefix SellMate/ heroku-backend main
 ```
