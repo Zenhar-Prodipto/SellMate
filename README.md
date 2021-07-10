@@ -10,7 +10,7 @@ An E-commerce site designed for pet buy-sell and maintenance.
 
 - Home Page
 
-  <img src="SellMate/images/Shop.png">
+  <img src="SellMate/images/Home.png">
 
 - Filtered Shopping
 
