@@ -2,7 +2,7 @@
   .footer-main {
     font-family: lato sans-serif;
     background-image: url("../../images/black-trangle-bg.jpg");
-    height: 50vh;
+    height: 55vh;
   }
 
   /* .footer-bg {
@@ -70,7 +70,7 @@
   .box-2-search-text {
     position: absolute;
     top: 7%;
-    right: 3%;
+    right: 10%;
     transform: translate(-50%, -50%);
     /* padding-top: 75px; */
     display: inline-block;
@@ -81,9 +81,9 @@
     position: absolute;
     top: 30%;
     left: 8%;
-    height: 10%;
+    height: 30%;
     width: 100%;
-    border: 2px white solid;
+    /* border: 2px white solid; */
   }
 
   .box2 h4 {
@@ -130,14 +130,19 @@
   }
 }
 
-/* ======================================================================== */
+/* ======================================================================== 
+======================================================================== 
+======================================================================== 
+======================================================================== 
+========================================================================  
+========================================================================  */
 /* For Tabs */
 
 @media (min-width: 768px) and (max-width: 991px) {
   .footer-main {
     font-family: lato sans-serif;
     background-image: url("../../images/black-trangle-bg.jpg");
-    height: 50vh;
+    height: 65vh;
   }
 
   /* .footer-bg {
@@ -212,13 +217,16 @@
     text-align: left;
   }
 
+  .box-2-search-text h4 {
+    font-size: 20px;
+  }
+
   .footer-search {
     position: absolute;
     top: 40%;
-    left: 8%;
-    height: 10%;
-    width: 100%;
-    border: 2px white solid;
+    left: 2%;
+    height: 50%;
+    width: 120%;
   }
 
   .box2 h4 {
@@ -266,7 +274,12 @@
   }
 }
 
-/* ======================================================================== */
+/* ======================================================================== 
+======================================================================== 
+======================================================================== 
+======================================================================== 
+========================================================================  
+========================================================================  */
 /* For Mobile */
 
 @media (min-width: 400px) and (max-width: 767px) {
@@ -339,22 +352,23 @@
   }
 
   .box-2-search-text {
-    /* position: absolute; */
-    /* top: 10%;
-    right: 10%;
+    position: absolute;
+    top: 10%;
+    left: 25%;
     transform: translate(-50%, -50%);
-    display: inline-block; */
+    display: inline-block;
     text-align: left;
     color: white;
+    padding-top: 10%;
   }
 
   .footer-search {
-    /* position: absolute; */
-    /* top: 30%;
+    position: absolute;
+    top: 40%;
     height: 10%;
-    width: 100%; */
-    border: 2px white solid;
+    width: 95%;
     padding-left: 15px;
+    padding-top: 15%;
   }
 
   .box2 h4 {
@@ -369,6 +383,7 @@
     /* border: 2px red solid; */
     /* padding: 22px; */
     text-align: left;
+    margin-top: 40%;
   }
   .contact-us-text {
     padding-left: 15px;

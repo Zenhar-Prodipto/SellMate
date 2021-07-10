@@ -4,6 +4,9 @@ import { API } from "../config";
 import { Link } from "react-router-dom";
 import { signup } from "../auth";
 
+//CSS
+import "./user_css/signout.css";
+
 const Signup = () => {
   const [values, setValues] = useState({
     name: " ",
@@ -39,7 +42,7 @@ const Signup = () => {
   };
 
   const signUpForm = () => (
-    <form>
+    <form className="signout-signout-form">
       <div className="form-group">
         <label className="text-muted">Name</label>
         <input
@@ -95,7 +98,7 @@ const Signup = () => {
   return (
     <Layout
       title="SignUp Page"
-      description="An e-commerce site for pets (may be)"
+      description="An e-commerce site for pets"
       className="container
       col-md-8
       offset-md-2"

@@ -14,7 +14,9 @@ const Footer = () => {
 
             <h4>About Us</h4>
             <p>
-              fksafnsdfnjsnfksnfsnfsdnfsj <br></br>dsfsf
+              We get you your pet mates here
+              <br></br>And let you exchange and connect
+              <br></br>with other petlovers
             </p>
 
             <h4>Check Out The Site</h4>
@@ -38,13 +40,12 @@ const Footer = () => {
           </div>
 
           <div class="box2">
-            <h4 class="footer-headers"></h4>
-            <div class="box-2-search-text">
+            <h4 className="footer-headers"></h4>
+            <div className="box-2-search-text">
               <h4>Search for pets here</h4>
             </div>
             <div className="footer-search">
-              <p>implement footer search component here</p>
-              {/* implement footer search component here */}
+              <Search />
             </div>
           </div>
 
@@ -85,7 +86,7 @@ const Footer = () => {
 
         <div class="big-Thank-You">
           <h2>A Big Thank You to you!</h2>
-          <div className="copyright-text">Copyright © 2020</div>
+          <div className="copyright-text">Copyright © 2021</div>
         </div>
       </div>
     </div>

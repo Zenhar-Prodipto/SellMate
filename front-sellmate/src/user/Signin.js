@@ -4,6 +4,9 @@ import { API } from "../config";
 import { Link, Redirect } from "react-router-dom";
 import { signin, authenticate, isAuthenticated } from "../auth";
 
+//CSS
+import "./user_css/signin.css";
+
 const Signin = () => {
   const [values, setValues] = useState({
     email: " ",
@@ -38,7 +41,7 @@ const Signin = () => {
   };
 
   const signUpForm = () => (
-    <form>
+    <form className="signin-signin-form">
       <div className="form-group">
         <label className="text-muted">Email</label>
         <input
@@ -97,7 +100,7 @@ const Signin = () => {
   return (
     <Layout
       title="Sign In "
-      description="An e-commerce site for pets (may be)"
+      description="An e-commerce site for pets"
       className="container
       col-md-8
       offset-md-2"
